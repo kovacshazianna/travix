@@ -1,5 +1,7 @@
 package com.travix.medusa.busyflights.domain.crazyair;
 
+import java.util.Objects;
+
 public class CrazyAirRequest {
 
     private String origin;
@@ -46,5 +48,34 @@ public class CrazyAirRequest {
 
     public void setPassengerCount(final int passengerCount) {
         this.passengerCount = passengerCount;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        CrazyAirRequest that = (CrazyAirRequest) o;
+        return passengerCount == that.passengerCount &&
+                Objects.equals(origin, that.origin) &&
+                Objects.equals(destination, that.destination) &&
+                Objects.equals(departureDate, that.departureDate) &&
+                Objects.equals(returnDate, that.returnDate);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(origin, destination, departureDate, returnDate, passengerCount);
+    }
+
+    @Override
+    public String
+    toString() {
+        return "CrazyAirRequest{" +
+                "origin='" + origin + '\'' +
+                ", destination='" + destination + '\'' +
+                ", departureDate='" + departureDate + '\'' +
+                ", returnDate='" + returnDate + '\'' +
+                ", passengerCount=" + passengerCount +
+                '}';
     }
 }

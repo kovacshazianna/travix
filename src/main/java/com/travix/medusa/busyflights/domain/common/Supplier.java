@@ -1,7 +1,10 @@
 package com.travix.medusa.busyflights.domain.common;
 
 /**
- * Created by Anna on 2017.08.20..
+ * Enum stores the suppliers.
+ *
+ * @author Anna_Kovacshazi
  */
 public enum Supplier {
+    CRAZY_AIR, TOUGHJET
 }

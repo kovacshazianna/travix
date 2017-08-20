@@ -20,8 +20,8 @@ import java.util.List;
  * @author Anna_Kovacshazi
  */
 //TODO refactor the whole class, try to use some other JSON parser
-public class SendToSupplier {
-    private final Logger logger = LoggerFactory.getLogger(SendToSupplier.class);
+public class SupplierConnector {
+    private final Logger logger = LoggerFactory.getLogger(SupplierConnector.class);
 
     //TODO this method could be instrumented
     public Object send(JSONObject jsonObject, String uri, Class c) {

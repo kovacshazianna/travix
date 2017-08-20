@@ -1,20 +1,46 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
     <head>
-        <title>Busy Flights</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <link rel="stylesheet" type="text/css" th:href="@{/css/lib/jquery-ui.min.css}" media="all" />
+        <title>BusyFlights App</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <link rel="stylesheet" type="text/css" href="webjars/bootstrap/3.3.7/css/bootstrap.min.css"/>
     </head>
     <body>
-        <!-- Todo: Refactor html, use some nice css and do some js validation. -->
-        <form id="requestform">
-            <textarea rows="20" cols="50">
-            </textarea>
-        </form>
-        <input type="button" th:value="${buttonText}" onclick="sendRequest()" />
+        <nav class="navbar navbar-inverse">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">BusyFlight App</a>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div id="response-div"></div>
+            <h3>Paste request here</h3>
+            <form id="request-form" class="form-horizontal">
+                <div class="form-group form-group-lg">
+                    <div class="col-sm-10">
+                        <textarea id="request-input" class="form-control" rows="13">
+{
+    "origin": "LHR",
+    "destination": "AMS",
+    "departureDate": "2017-08-21",
+    "returnDate": "2017-08-25",
+    "numberOfPassengers":"1"
+}
+                        </textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-10 text-center">
+                        <button id="bth-submit" type="submit" class="btn btn-primary btn-lg">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
 
-        <script type="text/javascript" th:src="@{/js/lib/jquery-3.2.1.min.js}" />
-        <script type="text/javascript" th:src="@{/js/src/busyflights.js}" />
+        <script type="text/javascript" src="webjars/jquery/3.1.1/jquery.min.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
     </body>
 </html>

@@ -1,7 +1,10 @@
 package com.travix.medusa.busyflights.domain.common;
 
 /**
- * Created by Anna on 2017.08.20..
+ * An enum which stores available destinations.
+ *
+ * @author Anna_Kovacshazi
  */
 public enum Destination {
+    ABA, AMS, CDE, FGH, IJK, LHR
 }

@@ -3,9 +3,9 @@ package com.travix.medusa.busyflights.service;
 import java.util.function.Function;
 
 /**
- * Convert the response to the given response.
+ * Convert the request into the given request.
  *
  * @author Anna_Kovacshazi
  */
-public interface ResponseConverter<R, S> extends Function<R, S> {
+public interface RequestConverter<R, S> extends Function<R, S> {
 }

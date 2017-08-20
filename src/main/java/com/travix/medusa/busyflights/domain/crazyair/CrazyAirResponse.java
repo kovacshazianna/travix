@@ -1,5 +1,7 @@
 package com.travix.medusa.busyflights.domain.crazyair;
 
+import java.util.Objects;
+
 public class CrazyAirResponse {
 
     private String airline;
@@ -64,5 +66,37 @@ public class CrazyAirResponse {
 
     public void setArrivalDate(final String arrivalDate) {
         this.arrivalDate = arrivalDate;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        CrazyAirResponse that = (CrazyAirResponse) o;
+        return Double.compare(that.price, price) == 0 &&
+                Objects.equals(airline, that.airline) &&
+                Objects.equals(cabinclass, that.cabinclass) &&
+                Objects.equals(departureAirportCode, that.departureAirportCode) &&
+                Objects.equals(destinationAirportCode, that.destinationAirportCode) &&
+                Objects.equals(departureDate, that.departureDate) &&
+                Objects.equals(arrivalDate, that.arrivalDate);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(airline, price, cabinclass, departureAirportCode, destinationAirportCode, departureDate, arrivalDate);
+    }
+
+    @Override
+    public String toString() {
+        return "CrazyAirResponse{" +
+                "airline='" + airline + '\'' +
+                ", price=" + price +
+                ", cabinclass='" + cabinclass + '\'' +
+                ", departureAirportCode='" + departureAirportCode + '\'' +
+                ", destinationAirportCode='" + destinationAirportCode + '\'' +
+                ", departureDate='" + departureDate + '\'' +
+                ", arrivalDate='" + arrivalDate + '\'' +
+                '}';
     }
 }

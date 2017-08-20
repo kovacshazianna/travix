@@ -16,13 +16,13 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Controller for the ajax request.
+ * Dummy controller for getting a ToughJet response.
  * Returns some dummy response
  *
  * @author Anna_Kovacshazi
  */
 @RestController
-public class ToughJetController {
+public class DummyToughJetController {
     private static final String REQUEST_MAPPING = "/supplier-tj";
 
     @PostMapping(value = REQUEST_MAPPING, consumes = MediaType.APPLICATION_JSON_VALUE)

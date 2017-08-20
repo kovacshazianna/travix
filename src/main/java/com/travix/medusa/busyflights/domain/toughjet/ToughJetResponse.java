@@ -1,5 +1,7 @@
 package com.travix.medusa.busyflights.domain.toughjet;
 
+import java.util.Objects;
+
 public class ToughJetResponse {
 
     private String carrier;
@@ -73,5 +75,40 @@ public class ToughJetResponse {
 
     public void setInboundDateTime(final String inboundDateTime) {
         this.inboundDateTime = inboundDateTime;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ToughJetResponse that = (ToughJetResponse) o;
+        return Double.compare(that.basePrice, basePrice) == 0 &&
+                Double.compare(that.tax, tax) == 0 &&
+                Double.compare(that.discount, discount) == 0 &&
+                Objects.equals(carrier, that.carrier) &&
+                Objects.equals(departureAirportName, that.departureAirportName) &&
+                Objects.equals(arrivalAirportName, that.arrivalAirportName) &&
+                Objects.equals(outboundDateTime, that.outboundDateTime) &&
+                Objects.equals(inboundDateTime, that.inboundDateTime);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(carrier, basePrice, tax, discount, departureAirportName, arrivalAirportName, outboundDateTime, inboundDateTime);
+    }
+
+    @Override
+    public String
+    toString() {
+        return "ToughJetResponse{" +
+                "carrier='" + carrier + '\'' +
+                ", basePrice=" + basePrice +
+                ", tax=" + tax +
+                ", discount=" + discount +
+                ", departureAirportName='" + departureAirportName + '\'' +
+                ", arrivalAirportName='" + arrivalAirportName + '\'' +
+                ", outboundDateTime='" + outboundDateTime + '\'' +
+                ", inboundDateTime='" + inboundDateTime + '\'' +
+                '}';
     }
 }
